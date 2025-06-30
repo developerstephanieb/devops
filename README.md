@@ -1,17 +1,15 @@
-# environments_reference
+# devops_reference
 
 ## Repository Structure
 
 ```plaintext
-interview_toolkit/
+devops_reference/
 ├── README.md
-├── 01_dev/
-├── 02_test/
-│   ├── integration_tests/
-│   └── staging/
-├── 03_production/
-│   ├── deployment/
-│   ├── monitoring/
-│   └── rollback_procedures/
+├── 01_environments/
+│   ├── dev/                  
+│   ├── test/                  
+│   └── production/
+├── 02_cicd/
+├── 03_incident_response/
 └── .gitignore
 ```
