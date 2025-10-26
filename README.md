@@ -1,4 +1,4 @@
-# DevOps Reference
+# DevOps
 
 ## Repository Structure
 
