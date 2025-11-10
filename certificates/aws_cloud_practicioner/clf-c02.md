@@ -21,3 +21,13 @@
 - **Amazon CloudFront**: A web service that speeds up the distribution of static and dynamic content, such as .html, .css, .js, and image files, to the users. Content is cached in edge locations. Content that is repeatedly accessed can be served from the edge locations instead of the source S3 bucket.
 
 ---
+
+- **AWS Cloud Map**: Creates and maintains a map of backend services. 
+
+- **AWS Organizations**: Provides centralized governance and billing for an AWS environment, including multiple accounts.
+
+- **AWS Systems Manager OpsCenter**: Provides a central location for IT professionals to view, investigate, and resolve operational work items.
+
+- **AWS Billing and Cost Management Console**: Service used to view, understand, and manage AWS costs and usage.
+
+---
