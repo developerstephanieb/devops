@@ -57,3 +57,65 @@
 - **Amazon Aurora**: A relational database service that is fully compatible with both MySQL and PostgreSQL.
 
 - **Amazon Elastic Block Store**: A block storage service designed for use with Amazon EC2. It's ideal for transaction-intensive workloads, such as running a database on an EC2 instance.
+
+---
+
+##
+
+- **AWS Direct Connect**: A cloud service that establishes a dedicated network connection from your premises to AWS. It links your internal network to an AWS Direct Connect location, bypassing the public internet to provide more consistent network performance and reduced bandwidth costs.
+
+- **AWS Site-to-Site VPN**: Creates a secure, encrypted connection (tunnel) between your on-premises network and the AWS Cloud. Unlike Direct Connect, this connection travels over the public internet.
+
+- **Amazon Connect**: A cloud-based omnichannel contact center service. It enables businesses to set up a customer support center (supporting both voice and chat) quickly and at scale.
+
+---
+
+## 
+
+- **Amazon Transcribe**: A service that uses machine learning to convert audio data to text.
+
+- **Amazon Polly**: A machine learning service that converts text to speech, including the ability to read text out loud.
+
+- **Amazon Translate**: A machine learning language translation service.
+
+- **Amazon Textract**: A machine learning service that can extract text from scanned documents.
+
+- **Amazon Comprehend**: A natural language processing (NLP) service that uses machine learning to find insights and relationships in text.
+
+---
+
+##
+
+- **Amazon EventBridge**: A serverless event bus that connects applications using events. It ingests events from apps and AWS services and routes them to targets (like Lambda or SQS) to build event-driven architectures.
+
+- **Amazon Simple Queue Service (Amazon SQS)**: A message queuing service used to decouple applications. SQS can host a queue for requests that are sent to applications.
+
+- **Amazon Simple Notification Service (Amazon SNS)**: A publish/subscribe service used to deliver publications (messages) to subscribers. SNS can send notifications, such as mobile text messages, push notifications, or emails, to subscribers of a quality assurance test-failure topic.
+
+---
+
+##
+
+- **Basic Support Plan**: Free for all AWS accounts. Provides access to customer service for billing and account issues only. It does not include technical support.
+
+- **Developer Support Plan**: The lowest-cost paid plan. Provides email-based technical support during business hours.
+
+- **Business Support Plan**: Provides 24/7 technical support via phone, email, and chat.
+
+- **Enterprise Support Plan**: The highest-level plan, designed for mission-critical workloads. Includes everything in the Business plan plus a dedicated Technical Account Manager (TAM) and a 15-minute response time for critical issues.
+
+---
+
+##
+
+- **Elastic Load Balancing (ELB)**: Acts as a central entry point, accepting incoming traffic from clients and routing those requests to its registered targets (such as EC2 instances) across one or more Availability Zones. It increases fault tolerance and availability. 
+
+- **Application Load Balancer (ALB)**: Best for HTTP/HTTPS traffic (Layer 7).
+
+- **Network Load Balancer (NLB)**: Best for ultra-high performance TCP/UDP traffic (Layer 4).
+
+- **Gateway Load Balancer (GLB)**: Used to deploy and scale third-party virtual network appliances.
+
+---
+
+##
