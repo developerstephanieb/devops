@@ -48,7 +48,7 @@
 
 ### 2.1 Understand the AWS shared responsibility model
 
-- **AWS Shared Responsibility Model**: This is the framework that defines the security and compliance responsibilities between AWS and the customer. In short, AWS is responsible for the security OF the cloud, while the customer is responsible for security IN the cloud.
+- **AWS Shared Responsibility Model**: This is the framework that defines the security and compliance responsibilities between AWS and the customer. In short, AWS is responsible for the security of the cloud, while the customer is responsible for security IN the cloud.
 
 - **AWS's Responsibility (Security OF the Cloud)**: AWS is responsible for protecting the underlying global infrastructure, including the hardware, software, networking, and physical facilities that run AWS services.
 
@@ -86,11 +86,11 @@
 
 ### 3.1 Define methods of deploying and operating in the AWS Cloud
 
+- **AWS Site-to-Site VPN**: Creates a secure, encrypted connection (tunnel) between your on-premises network and the AWS Cloud. Unlike Direct Connect, this connection travels over the public internet.
+
 - **AWS Client VPN**: A managed client-based VPN service that allows individual users to securely connect to AWS and on-premises resources from any location. This contrasts with Site-to-Site VPN, which connects an entire network or data center.
 
 - **AWS Direct Connect**: A cloud service that establishes a dedicated network connection from your premises to AWS. It links your internal network to an AWS Direct Connect location, bypassing the public internet to provide more consistent network performance and reduced bandwidth costs.
-
-- **AWS Site-to-Site VPN**: Creates a secure, encrypted connection (tunnel) between your on-premises network and the AWS Cloud. Unlike Direct Connect, this connection travels over the public internet.
 
 - **Amazon Connect**: A cloud-based omnichannel contact center service. It enables businesses to set up a customer support center (supporting both voice and chat) quickly and at scale.
 
