@@ -1,4 +1,4 @@
-# AWS Certified Cloud Practitioner Study Guide (CLF-C02)
+# AWS Certified Cloud Practitioner Practice Question Set (CLF-C02)
 
 ---
 
