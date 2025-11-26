@@ -9,7 +9,7 @@ devops_reference/
 │   ├──                   
 │   ├──                   
 │   └── 
-├── 02_/
+├── 02_
 ├── 03_infrastructure_as_code/
 │   ├── 01_terraform.md
 │   └── 02_ansible.md
@@ -19,5 +19,8 @@ devops_reference/
 ├── 05_ci_cd/
 │   ├── 01_jenkins.md
 │   └── 02_github_actions.md
+├── 06_certificates/
+│   ├── aws_cloud_practitioner/                  
+│   └── aws_solutions_architect/                  
 └── .gitignore
 ```
