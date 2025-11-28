@@ -1,4 +1,4 @@
-# AWS Certified Cloud Practitioner Services and Features
+# AWS Certified Cloud Practitioner (CLF-C02): AWS Services and Features 
 
 ---
 

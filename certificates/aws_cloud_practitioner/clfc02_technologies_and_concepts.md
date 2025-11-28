@@ -1,0 +1,265 @@
+# AWS Certified Cloud Practitioner (CLF-C02): Technologies and Concepts
+
+---
+ 
+[Application Programming Interfaces (API)](#application-programming-interfaces-api)   
+[Benefits of Migrating to the AWS Cloud](#benefits-of-migrating-to-the-aws-cloud)  
+[AWS Cloud Adoption Framework (AWS CAF)](#aws-cloud-adoption-framework-aws-caf)  
+[AWS Compliance](#aws-compliance)   
+[Compute](#compute)   !!!   
+[Cost Management](#cost-management)   
+[Databases](#databases)   !!!   
+[Amazon EC2 Instance Types](#amazon-ec2-instance-types)    
+[AWS Global Infrastructure](#aws-global-infrastructure)   
+[Infrastructure as Code (IaC)](#infrastructure-as-code-iac)    
+[AWS Knowledge Center](#aws-knowledge-center)   
+[Machine Learning](#machine-learning)    !!!   
+[Management and Governance](#management-and-governance)   !!!   
+[Migration and data transfer](#migration-and-data-transfer)   !!!   
+[Network services](#network-services)   !!!   
+[AWS Partner Network](#aws-partner-network)   
+[AWS Prescriptive Guidance](#aws-prescriptive-guidance)   
+[AWS Pricing Calculator](#aws-pricing-calculator)   
+[AWS Professional Services](#aws-professional-services)   
+[AWS re:Post](#aws-repost)   
+[AWS SDKs](#aws-sdks)   
+[Security](#security)   !!!   
+[AWS Security Blog](#aws-security-blog)   
+[AWS Security Center](#aws-security-center)   
+[AWS shared responsibility model](#aws-shared-responsibility-model)   
+[AWS Solutions Architects](#aws-solutions-architects)   
+[Storage](#storage)    !!!      
+[AWS Support Center](#aws-support-center)   
+[AWS Support plans](#aws-support-plans)   
+[AWS Well-Architected Framework](#aws-well-architected-framework)   
+
+---
+
+## Application Programming Interfaces (API)
+
+**Application Programming Interfaces (API)** serve as the primary mechanism through which users and applications interact with the AWS platform. Every action performed on AWS, whether clicking a button in a web browser or running a script, results in an API call to an AWS service endpoint. 
+
+- **Three Methods of Access**: AWS APIs can be accessed via three primary interfaces:
+  - **AWS Management Console**: A browser-based Graphical User Interface (GUI) suitable for manual resource provisioning, monitoring, and visual management.
+  - **AWS Command Line Interface (CLI)**: A unified tool that enables control of AWS services from a command line shell, allowing for the automation of repetitive tasks through scripts.
+  - **AWS Software Development Kits (SDKs)**: Libraries that allow interaction with AWS services directly from application code (e.g., Python, Java, Node.js), handling details like connection management and authentication.
+- **Statelessness**: AWS APIs are generally stateless, meaning each request must contain all the necessary information (authentication credentials, action, parameters) to be processed, without relying on previous requests.
+- **Public vs Private Connectivity**: APIs can be public (accessible over the internet) or private (only accessible within the Virtual Private Cloud).
+
+---
+
+## Benefits of Migrating to the AWS Cloud
+
+The **Six Advantages of Cloud Computing** describe the fundamental shifts in economic and operational models when moving from on-premises infrastructure to the cloud.
+
+- **Trade capital expense for variable expense**: Organizations can avoid heavy upfront investment in physical data centers (CapEx) in favor of paying only for computing resources consumed (OpEx).
+
+- **Benefit from massive economies of scale**: Due to the aggregate usage from hundreds of thousands of customers, AWS achieves lower variable costs than an individual organization could achieve alone. These savings are passed on to the customer in the form of lower pay-as-you-go prices.
+
+- **Stop guessing capacity**: Cloud computing eliminates the need to predict infrastructure requirements in advance. Resources scale up or down automatically to match demand, preventing expensive idle resources or capacity shortages.
+
+- **Increase speed and agility**: IT resources can be launched in minutes rather than weeks. This drastically reduces the time and cost required to experiment and develop new applications.
+
+- **Stop spending money running and maintaining data centers**: Focus shifts to developing applications and differentiating business value rather than the heavy lifting of racking, stacking, and powering servers.
+
+- **Go global in minutes**: Applications can be deployed in multiple AWS Regions around the world with just a few clicks, providing lower latency and a better experience for customers regardless of their location.
+
+---
+
+## AWS Cloud Adoption Framework (AWS CAF)
+
+The **AWS Cloud Adoption Framework (AWS CAF)** provides a comprehensive set of guidelines to help organizations structure and execute their digital transformation strategies. It organizes guidance into six areas of focus, known as **Perspectives**, which are separated into Business Capabilities and Technical Capabilities.
+
+- **Business Perspective**: Focuses on ensuring that cloud adoption aligns with business goals and measurable outcomes. It addresses strategy, product management, and business insights.
+
+- **People Perspective**: Focuses on organizational change management, culture, and training. It addresses workforce transformation and preparing teams for cloud operations.
+
+- **Governance Perspective**: Focuses on orchestrating cloud initiatives to maximize organizational benefits while minimizing risks. It addresses portfolio management and program management.
+
+- **Platform Perspective**: Focuses on the architectural design and modernization of infrastructure and applications. It addresses the delivery of scalable and resilient cloud solutions.
+
+- **Security Perspective**: Focuses on achieving confidentiality, integrity, and availability of data and workloads. It addresses compliance, risk management, and identity management.
+
+- **Operations Perspective**: Focuses on the health, availability, and performance of IT services. It addresses the monitoring, management, and automation of cloud environments.
+
+---
+
+### AWS Compliance 
+
+**AWS Compliance** refers to the set of controls, tools, and certifications that enable organizations to adhere to legal, regulatory, and industry standards while running workloads on AWS.
+
+- **AWS Artifact**: The central, self-service portal for on-demand access to AWS compliance reports and agreements. It is the primary resource for retrieving audit artifacts to demonstrate AWS security controls to auditors or regulators.
+
+- **Artifact Reports vs. Agreements**: AWS Artifact is divided into two sections: **Reports** (access to third-party audit reports like SOC, PCI DSS, and ISO certifications) and **Agreements** (review and sign legal documents such as the Business Associate Addendum (BAA) for HIPAA).
+
+- **Shared Responsibility for Compliance**: Compliance is a shared responsibility. AWS ensures the compliance of the underlying infrastructure (e.g., physical security of data centers), while the customer is responsible for the compliance of the data and applications they place on that infrastructure.
+
+- **Inheritance of Controls**: Customers inherit the compliance controls maintained by AWS. For example, a customer automatically inherits AWS’s physical security controls but must still configure their own access controls and encryption to meet their specific regulatory requirements.
+
+- **Key Compliance Programs**: AWS maintains compliance with numerous global standards. Common examples referenced include **SOC** (System and Organization Controls) for financial reporting and security, **PCI DSS** (Payment Card Industry Data Security Standard) for handling credit card data, **HIPAA** (Health Insurance Portability and Accountability Act) for healthcare data, and **FedRAMP** for US government data.
+
+---
+
+### Compute
+
+**AWS Compute** services provide the scalable processing power, memory, and networking required to run applications in the cloud. These services vary by the level of abstraction and management they provide, ranging from virtual servers to serverless computing.
+
+- **Amazon Elastic Compute Cloud (Amazon EC2)**: Provides secure, resizable compute capacity in the cloud. It offers granular control over virtual servers (instances), allowing the selection of the operating system, processor type, and network configuration. It is categorized as Infrastructure as a Service (IaaS).
+
+- **AWS Lambda**: A serverless, event-driven compute service that lets code run without provisioning or managing servers. It automatically scales by running code in response to triggers (such as data changes in an S3 bucket or updates to a DynamoDB table) and charges only for the compute time consumed.
+
+- **Amazon Elastic Container Service (Amazon ECS)**: A highly scalable, high-performance container orchestration service that supports Docker containers. It allows for the running and scaling of containerized applications on AWS.
+
+- **Amazon Elastic Kubernetes Service (Amazon EKS)**: A managed service that makes it easy to run Kubernetes on AWS without needing to install and operate your own Kubernetes control plane or nodes. It is used for orchestrating containerized applications using the Kubernetes system.
+
+- **AWS Fargate**: A serverless compute engine for containers that works with both Amazon ECS and Amazon EKS. It removes the need to provision and manage servers, allowing focus to remain on designing and building applications while Fargate manages the underlying infrastructure.
+
+- **Amazon Elastic Beanstalk**: A service for deploying and scaling web applications and services. It handles the deployment details, including capacity provisioning, load balancing, auto-scaling, and application health monitoring, while allowing retention of control over the underlying AWS resources.
+
+- **AWS Batch**: Enables developers, scientists, and engineers to run hundreds of thousands of batch computing jobs on AWS. It dynamically provisions the optimal quantity and type of compute resources (e.g., CPU or memory-optimized instances) based on the volume and specific resource requirements of the batch jobs submitted.
+
+---
+
+### Cost Management
+
+**AWS Cost Management** encompasses the tools and strategies used to budget, forecast, and optimize spending on AWS. These tools allow organizations to track usage, visualize cost drivers, and implement controls to prevent overspending.
+
+- **AWS Pricing Calculator**: A web-based tool used to estimate the cost of AWS services before they are provisioned. It enables the modeling of solutions and the generation of cost estimates based on expected usage, which is useful for planning and budgeting new projects.
+
+- **AWS Budgets**: A tool that enables setting custom budgets to track cost and usage. Alerts can be configured to send notifications via email or SNS when actual or forecasted spending exceeds defined thresholds.
+
+- **AWS Cost Explorer**: A tool for visualizing and analyzing historical costs and usage. It provides graphs and charts to identify trends, pinpoint cost drivers, and forecast future costs for up to 12 months.
+
+- **AWS Cost & Usage Report (CUR)**: The most comprehensive and granular set of cost and usage data available. It lists every single usage record and is typically saved to an S3 bucket for integration with third-party analytics tools or detailed auditing.
+
+- **Consolidated Billing**: A feature of AWS Organizations that enables the combination of bills from multiple AWS accounts into a single payment method. This provides a unified view of costs and facilitates volume discounts by aggregating usage across all accounts.
+
+- **Cost Allocation Tags**: Metadata (key-value pairs) assigned to AWS resources to categorize and track costs. Tagging resources allows for the filtering and reporting of costs specifically for distinct projects, departments, or cost centers.
+
+- **Savings Plans vs. Reserved Instances**: Two major discount models used to manage costs. **Reserved Instances (RIs)** offer significant discounts for committing to a specific instance configuration for 1 or 3 years. **Savings Plans** offer similar discounts but are more flexible, requiring only a commitment to a specific amount of spend regardless of the instance type or region used.
+
+---
+
+### Databases
+
+**AWS Database Services** offer a range of purpose-built databases optimized for specific use cases, ranging from traditional relational systems to high-performance NoSQL engines. Choosing the right database depends on the data structure, query requirements, and scalability needs.
+
+- **Relational vs. Non-Relational**: **Relational Databases (SQL)** store data in rows and tables with a fixed schema and are ideal for structured data and complex transaction processing (e.g., financial systems). **Non-Relational Databases (NoSQL)** use flexible schemas (like key-value pairs or documents) and are optimized for horizontal scaling and rapid iteration (e.g., product catalogs, user profiles).
+
+- **Amazon Relational Database Service (Amazon RDS)**: A managed service that simplifies the setup, operation, and scaling of a relational database. It automates administrative tasks such as hardware provisioning, database setup, patching, and backups. Supported engines include MySQL, PostgreSQL, MariaDB, Oracle Database, and SQL Server.
+
+- **Amazon Aurora**: A fully managed relational database engine compatible with MySQL and PostgreSQL. It is built for the cloud, providing up to five times the throughput of standard MySQL and three times the throughput of standard PostgreSQL. It automatically replicates six copies of data across three Availability Zones for high durability.
+
+- **Amazon DynamoDB**: A key-value and document database that delivers single-digit millisecond performance at any scale. It is fully managed, serverless, and can handle more than 10 trillion requests per day, making it suitable for mobile, web, gaming, and IoT applications.
+
+- **Amazon ElastiCache**: A fully managed in-memory data store, typically used as a cache to improve application performance. By storing frequently accessed data in memory (using Redis or Memcached), it reduces the load on the primary database and decreases latency for end-users.
+
+- **Amazon Redshift**: A fully managed, petabyte-scale data warehouse service in the cloud. It uses columnar storage and parallel query execution to allow for the analysis of massive datasets using standard SQL. It is distinct from transactional databases (like RDS) as it is optimized for analytics and reporting (OLAP).
+
+- **AWS Database Migration Service (AWS DMS)**: A tool used to migrate databases to AWS securely. The source database remains fully operational during the migration, minimizing downtime. It supports homogenous migrations (e.g., Oracle to Oracle) as well as heterogeneous migrations (e.g., Oracle to Aurora).
+
+---
+
+### Amazon EC2 Instance Types
+
+**Amazon EC2 Purchasing Options** allow for the optimization of costs based on workload requirements. Selecting the correct pricing model is critical for balancing cost savings with availability and flexibility.
+
+- **On-Demand Instances**: The default pay-as-you-go model. Payment is made for compute capacity by the second or hour with no long-term commitment or upfront payments. This is ideal for short-term, irregular workloads or applications being developed and tested for the first time.
+
+- **Savings Plans**: A flexible pricing model that offers low prices (up to 72% savings) in exchange for a commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3-year term. This model applies to usage across Amazon EC2, AWS Lambda, and AWS Fargate.
+
+- **Reserved Instances (RI)**: Provides a significant discount (up to 72%) compared to On-Demand pricing in exchange for a 1 or 3-year term commitment. **Standard RIs** offer the highest discount but are less flexible; the instance type and operating system are fixed. **Convertible RIs** offer a lower discount than Standard RIs but allow the exchange of the instance for another with different attributes (e.g., different instance family) during the term.
+
+- **Spot Instances**: Allow the use of spare Amazon EC2 computing capacity for up to 90% off the On-Demand price. However, AWS can reclaim the instance with only a 2-minute warning if the capacity is needed elsewhere. This is suitable for fault-tolerant, stateless workloads like batch processing or data analysis.
+
+- **Dedicated Hosts**: A physical server fully dedicated to a single customer's use. This option is typically required to meet strict regulatory compliance or to use existing server-bound software licenses (BYOL - Bring Your Own License) that are billed per socket or per core.
+
+- **Dedicated Instances**: Instances that run in a Virtual Private Cloud (VPC) on hardware that's dedicated to a single customer. Unlike Dedicated Hosts, these do not offer visibility into the underlying sockets or physical cores of the host hardware.
+
+---
+
+### AWS Global Infrastructure
+
+**AWS Global Infrastructure** refers to the physical hardware and network arrangement that spans the globe. It is designed and built to deliver a flexible, reliable, scalable, and secure cloud computing environment with high quality global network performance.
+
+- **Regions**: A Region is a physical location in the world where AWS clusters data centers. Each Region is entirely independent and isolated from other Regions to ensure fault tolerance and stability.
+
+- **Availability Zones (AZs)**: Each Region consists of three or more Availability Zones. An AZ is a discrete location within a Region that is engineered to be isolated from failures in other AZs. They provide inexpensive, low-latency network connectivity to other AZs in the same Region.
+
+- **Data Centers**: The fundamental building block of the infrastructure. A single Availability Zone consists of one or more discrete data centers, each with redundant power, networking, and connectivity, housed in separate facilities.
+
+- **Edge Locations**: Specialized data centers used by **Amazon CloudFront** (CDN) to cache content closer to end-users. These locations are more numerous than Regions and help reduce latency by delivering content from the location geographically nearest to the user.
+
+- **Regional Data Sovereignty**: A critical concept for compliance. Data stored in a specific Region never leaves that Region unless explicitly moved or replicated. This ensures organizations can meet local data residency laws and regulations.
+
+- **Factors for Selecting a Region**: When deploying resources, the choice of Region is determined by four main factors:
+
+  1. **Data Governance**: Adherence to local laws regarding where data must reside.
+
+  2. **Proximity**: Reducing latency by choosing a Region close to the target user base.
+
+  3. **Cost**: Pricing for AWS services varies by Region based on local operational costs (e.g., electricity, taxes).
+
+  4. **Service Availability**: Not all AWS services are available in every Region immediately upon launch.
+
+---
+
+### Infrastructure as Code (IaC)
+
+**Infrastructure as Code (IaC)** is the practice of provisioning and managing IT infrastructure using configuration files and code rather than through manual configuration in the AWS Management Console. This approach treats infrastructure with the same rigor as application code.
+
+- **AWS CloudFormation**: The primary AWS service for Infrastructure as Code. It allows for the modeling of an entire infrastructure in a text file. CloudFormation reads the file and automatically provisions and configures the resources described within it.
+
+- **Templates**: The "blueprint" files used by CloudFormation, written in either JSON or YAML format. These templates describe the desired resources (e.g., an EC2 instance, an S3 bucket) and their dependencies.
+
+- **Stacks**: When CloudFormation executes a template, it creates a **Stack**. A Stack is a collection of AWS resources that are managed as a single unit. If a stack is deleted, all resources defined within that stack are automatically deleted, ensuring clean removal of infrastructure.
+
+- **Repeatability and Consistency**: IaC eliminates the manual errors and inconsistencies associated with human configuration. The same template can be used to deploy identical environments (e.g., Development, Staging, Production) in multiple Regions with guaranteed consistency.
+
+- **Version Control**: Because infrastructure is defined as code, templates can be stored in version control systems (like Git). This allows for tracking changes over time, peer reviews of infrastructure changes, and the ability to roll back to previous versions if issues arise.
+
+- **AWS Cloud Development Kit (AWS CDK)**: An open-source software development framework that allows for the definition of cloud application resources using familiar programming languages (such as Python, Java, or TypeScript) instead of JSON or YAML. The CDK compiles this code into CloudFormation templates.
+
+---
+
+### AWS Knowledge Center
+
+**The AWS Knowledge Center** is a searchable database of support articles and videos covering the most frequent questions and requests received by AWS Support.
+
+- **Authoritative Source**: Content is created and updated by the same AWS Support engineers and architects who handle customer cases daily, ensuring the solutions are practical, technically accurate, and up-to-date.
+
+- **Problem Solving**: It serves as a primary resource for troubleshooting without needing to contact support. It contains specific solutions to common technical issues, detailed explanations of error messages, and "how-to" guides for configuring services.
+
+- **Public Accessibility**: The Knowledge Center is publicly available on the internet. Access does not require an AWS account or a paid support plan.
+
+- **Integration with Case Creation**: When a user attempts to create a support case within the AWS Management Console, the system automatically suggests relevant Knowledge Center articles based on the service and issue selected. This often allows for issue resolution before a case is formally submitted.
+
+---
+
+### Machine Learning
+
+### Management and Governance
+
+### Migration and data transfer
+
+- AWS DataSync: An online data transfer service that automates moving data between on-premises storage and AWS storage services (like S3 or EFS). It uses a proprietary protocol to transfer data up to 10 times faster than open-source tools.
+
+### Network services
+### AWS Partner Network
+### AWS Prescriptive Guidance
+### AWS Pricing Calculator
+### AWS Professional Services
+### AWS re:Post
+### AWS SDKs
+### Security
+### AWS Security Blog
+### AWS Security Center
+### AWS shared responsibility model
+### AWS Solutions Architects
+### Storage
+### AWS Support Center
+### AWS Support plans
+### AWS Well-Architected Framework
+
+---
+
