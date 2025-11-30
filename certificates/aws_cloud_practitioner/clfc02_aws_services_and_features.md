@@ -6,21 +6,21 @@
 [Application Integration](#application-integration)   
 [Business Applications](#business-applications)   
 [Cloud Financial Management](#cloud-financial-management)   
-[Compute](#compute)   !!!   
+[Compute](#compute)      
 [Containers](#containers)   
 [Customer Engagement](#customer-engagement)   
-[Database](#database)   !!!   
+[Database](#database)     
 [Developer Tools](#developer-tools)   
 [End User Computing](#end-user-computing)   
 [Frontend Web and Mobile](#frontend-web-and-mobile)   
 [Internet of Things (IoT)](#internet-of-things-iot)   
-[Machine Learning](#machine-learning)   !!!   
-[Management and Governance](#management-and-governance)    !!!   
-[Migration and Transfer](#migration-and-transfer)   !!!    
-[Networking and Content Delivery](#networking-and-content-delivery)   !!!   
+[Machine Learning](#machine-learning)   
+[Management and Governance](#management-and-governance)       
+[Migration and Transfer](#migration-and-transfer)       
+[Networking and Content Delivery](#networking-and-content-delivery)   
 [Security, Identity, and Compliance](#security-identity-and-compliance)     
-[Serverless](#serverless)   !!!   
-[Storage](#storage)   !!!    
+[Serverless](#serverless)   
+[Storage](#storage)   
 
 ---
 
