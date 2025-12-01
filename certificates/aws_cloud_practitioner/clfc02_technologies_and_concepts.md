@@ -53,15 +53,10 @@
 The **Six Advantages of Cloud Computing** describe the fundamental shifts in economic and operational models when moving from on-premises infrastructure to the cloud.
 
 - **Trade capital expense for variable expense**: Organizations can avoid heavy upfront investment in physical data centers (CapEx) in favor of paying only for computing resources consumed (OpEx).
-
 - **Benefit from massive economies of scale**: Due to the aggregate usage from hundreds of thousands of customers, AWS achieves lower variable costs than an individual organization could achieve alone. These savings are passed on to the customer in the form of lower pay-as-you-go prices.
-
 - **Stop guessing capacity**: Cloud computing eliminates the need to predict infrastructure requirements in advance. Resources scale up or down automatically to match demand, preventing expensive idle resources or capacity shortages.
-
 - **Increase speed and agility**: IT resources can be launched in minutes rather than weeks. This drastically reduces the time and cost required to experiment and develop new applications.
-
 - **Stop spending money running and maintaining data centers**: Focus shifts to developing applications and differentiating business value rather than the heavy lifting of racking, stacking, and powering servers.
-
 - **Go global in minutes**: Applications can be deployed in multiple AWS Regions around the world with just a few clicks, providing lower latency and a better experience for customers regardless of their location.
 
 ---
@@ -71,15 +66,10 @@ The **Six Advantages of Cloud Computing** describe the fundamental shifts in eco
 The **AWS Cloud Adoption Framework (AWS CAF)** provides a comprehensive set of guidelines to help organizations structure and execute their digital transformation strategies. It organizes guidance into six areas of focus, known as **Perspectives**, which are separated into Business Capabilities and Technical Capabilities.
 
 - **Business Perspective**: Focuses on ensuring that cloud adoption aligns with business goals and measurable outcomes. It addresses strategy, product management, and business insights.
-
 - **People Perspective**: Focuses on organizational change management, culture, and training. It addresses workforce transformation and preparing teams for cloud operations.
-
 - **Governance Perspective**: Focuses on orchestrating cloud initiatives to maximize organizational benefits while minimizing risks. It addresses portfolio management and program management.
-
 - **Platform Perspective**: Focuses on the architectural design and modernization of infrastructure and applications. It addresses the delivery of scalable and resilient cloud solutions.
-
 - **Security Perspective**: Focuses on achieving confidentiality, integrity, and availability of data and workloads. It addresses compliance, risk management, and identity management.
-
 - **Operations Perspective**: Focuses on the health, availability, and performance of IT services. It addresses the monitoring, management, and automation of cloud environments.
 
 ---
@@ -89,54 +79,41 @@ The **AWS Cloud Adoption Framework (AWS CAF)** provides a comprehensive set of g
 **AWS Compliance** refers to the set of controls, tools, and certifications that enable organizations to adhere to legal, regulatory, and industry standards while running workloads on AWS.
 
 - **AWS Artifact**: The central, self-service portal for on-demand access to AWS compliance reports and agreements. It is the primary resource for retrieving audit artifacts to demonstrate AWS security controls to auditors or regulators.
-
 - **Artifact Reports vs. Agreements**: AWS Artifact is divided into two sections: **Reports** (access to third-party audit reports like SOC, PCI DSS, and ISO certifications) and **Agreements** (review and sign legal documents such as the Business Associate Addendum (BAA) for HIPAA).
-
 - **Shared Responsibility for Compliance**: Compliance is a shared responsibility. AWS ensures the compliance of the underlying infrastructure (e.g., physical security of data centers), while the customer is responsible for the compliance of the data and applications they place on that infrastructure.
-
 - **Inheritance of Controls**: Customers inherit the compliance controls maintained by AWS. For example, a customer automatically inherits AWS’s physical security controls but must still configure their own access controls and encryption to meet their specific regulatory requirements.
-
 - **Key Compliance Programs**: AWS maintains compliance with numerous global standards. Common examples referenced include **SOC** (System and Organization Controls) for financial reporting and security, **PCI DSS** (Payment Card Industry Data Security Standard) for handling credit card data, **HIPAA** (Health Insurance Portability and Accountability Act) for healthcare data, and **FedRAMP** for US government data.
 
 ---
 
 ### Compute
 
-**AWS Compute** services provide the scalable processing power, memory, and networking required to run applications in the cloud. These services vary by the level of abstraction and management they provide, ranging from virtual servers to serverless computing.
+**Compute** in the cloud refers to the on-demand delivery of IT resources (primarily Central Processing Unit or CPU power and memory) over the internet with pay-as-you-go pricing. It replaces the need to purchase, house, and maintain physical servers.
 
-- **Amazon Elastic Compute Cloud (Amazon EC2)**: Provides secure, resizable compute capacity in the cloud. It offers granular control over virtual servers (instances), allowing the selection of the operating system, processor type, and network configuration. It is categorized as Infrastructure as a Service (IaaS).
-
-- **AWS Lambda**: A serverless, event-driven compute service that lets code run without provisioning or managing servers. It automatically scales by running code in response to triggers (such as data changes in an S3 bucket or updates to a DynamoDB table) and charges only for the compute time consumed.
-
-- **Amazon Elastic Container Service (Amazon ECS)**: A highly scalable, high-performance container orchestration service that supports Docker containers. It allows for the running and scaling of containerized applications on AWS.
-
-- **Amazon Elastic Kubernetes Service (Amazon EKS)**: A managed service that makes it easy to run Kubernetes on AWS without needing to install and operate your own Kubernetes control plane or nodes. It is used for orchestrating containerized applications using the Kubernetes system.
-
-- **AWS Fargate**: A serverless compute engine for containers that works with both Amazon ECS and Amazon EKS. It removes the need to provision and manage servers, allowing focus to remain on designing and building applications while Fargate manages the underlying infrastructure.
-
-- **Amazon Elastic Beanstalk**: A service for deploying and scaling web applications and services. It handles the deployment details, including capacity provisioning, load balancing, auto-scaling, and application health monitoring, while allowing retention of control over the underlying AWS resources.
-
-- **AWS Batch**: Enables developers, scientists, and engineers to run hundreds of thousands of batch computing jobs on AWS. It dynamically provisions the optimal quantity and type of compute resources (e.g., CPU or memory-optimized instances) based on the volume and specific resource requirements of the batch jobs submitted.
+- **Compute Capacity**: The amount of computational power required to run an application. In the cloud, this capacity is elastic, meaning it can be scaled up or down instantly to match the workload demand.
+- **Virtualization**: The fundamental technology powering cloud compute. It allows a single physical server to be partitioned into multiple virtual machines (VMs), each acting as an independent server with its own operating system (OS) and resources.
+- **Three Primary Compute Models**:
+  - **Virtual Machines (Infrastructure as a Service - IaaS)**: Provides the highest level of flexibility and control. The user manages the guest operating system and the software stack (e.g., Amazon EC2).
+  - **Container Services**: A method of operating system virtualization that allows for running applications in isolated processes called containers. Containers package code and its dependencies together, ensuring consistency across different environments (e.g., Amazon ECS, Amazon EKS).
+  - **Serverless Computing (Function as a Service - FaaS)**: Removes the operational overhead of managing servers entirely. The cloud provider automatically provisions and scales the infrastructure required to run the code. Users pay only for the compute time consumed (e.g., AWS Lambda).
+- **Scalability**: The ability to increase or decrease compute resources. **Vertical Scaling** (scaling up) involves increasing the power of a single instance (e.g., adding more RAM), while **Horizontal Scaling** (scaling out) involves adding more instances to a system to handle increased load.
 
 ---
 
 ### Cost Management
 
-**AWS Cost Management** encompasses the tools and strategies used to budget, forecast, and optimize spending on AWS. These tools allow organizations to track usage, visualize cost drivers, and implement controls to prevent overspending.
+**Cost Management** encompasses the tools and strategies used to budget, forecast, and optimize spending on AWS. It requires shifting from a fixed-expense mindset (Data Centers) to a variable-expense mindset (Cloud).
 
-- **AWS Pricing Calculator**: A web-based tool used to estimate the cost of AWS services before they are provisioned. It enables the modeling of solutions and the generation of cost estimates based on expected usage, which is useful for planning and budgeting new projects.
-
-- **AWS Budgets**: A tool that enables setting custom budgets to track cost and usage. Alerts can be configured to send notifications via email or SNS when actual or forecasted spending exceeds defined thresholds.
-
-- **AWS Cost Explorer**: A tool for visualizing and analyzing historical costs and usage. It provides graphs and charts to identify trends, pinpoint cost drivers, and forecast future costs for up to 12 months.
-
-- **AWS Cost & Usage Report (CUR)**: The most comprehensive and granular set of cost and usage data available. It lists every single usage record and is typically saved to an S3 bucket for integration with third-party analytics tools or detailed auditing.
-
+- **Fundamentals of AWS Pricing**: While pricing models vary by service, there are three fundamental drivers of cost on AWS:
+  - **Compute**: Charged per hour or per second (e.g., EC2 instances, Lambda execution time).
+  - **Storage**: Charged by the amount of data stored (e.g., GBs in S3 or EBS).
+  - **Data Transfer**: Generally, Data In is free, while Data Out (transferring data out of AWS to the internet) is charged.
+- **Total Cost of Ownership (TCO)**: A financial estimate intended to help determine the direct and indirect costs of a product or system. In the context of AWS, it helps compare the cost of running an entire infrastructure environment on-premises (including power, cooling, real estate, and IT labor) versus running it in the AWS Cloud.
 - **Consolidated Billing**: A feature of AWS Organizations that enables the combination of bills from multiple AWS accounts into a single payment method. This provides a unified view of costs and facilitates volume discounts by aggregating usage across all accounts.
-
 - **Cost Allocation Tags**: Metadata (key-value pairs) assigned to AWS resources to categorize and track costs. Tagging resources allows for the filtering and reporting of costs specifically for distinct projects, departments, or cost centers.
-
-- **Savings Plans vs. Reserved Instances**: Two major discount models used to manage costs. **Reserved Instances (RIs)** offer significant discounts for committing to a specific instance configuration for 1 or 3 years. **Savings Plans** offer similar discounts but are more flexible, requiring only a commitment to a specific amount of spend regardless of the instance type or region used.
+- **Savings Plans vs. Reserved Instances**: Two major discount models used to manage costs. 
+  - **Reserved Instances (RIs)**: Offer significant discounts for committing to a specific instance configuration for 1 or 3 years. 
+  - **Savings Plans**: Offer similar discounts but are more flexible, requiring only a commitment to a specific amount of spend regardless of the instance type or region used.
 
 ---
 
