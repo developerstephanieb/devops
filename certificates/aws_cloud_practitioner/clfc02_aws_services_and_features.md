@@ -120,6 +120,7 @@
 - **Amazon MemoryDB for Redis**: A durable, in-memory database service that delivers ultra-fast performance. Unlike Amazon ElastiCache (which is primarily a cache), MemoryDB uses a Multi-AZ transaction log to ensure data durability, making it suitable as a primary database for applications requiring microsecond read and single-digit millisecond write latencies.
 - **Amazon Neptune**: A fully managed graph database service built for applications that work with highly connected datasets, such as social networking feeds, recommendation engines, and fraud detection. It supports popular graph query languages like Apache TinkerPop Gremlin and W3C’s SPARQL.
 - **Amazon RDS**: A managed service that makes it easy to set up, operate, and scale a relational database in the cloud. It automates time-consuming administration tasks such as hardware provisioning, database setup, patching, and backups. It supports six database engines: Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle Database, and SQL Server.
+- **Amazon ElastiCache**: A fully managed in-memory data store, typically used as a cache to improve application performance. By storing frequently accessed data in memory (using Redis or Memcached), it reduces the load on the primary database and decreases latency for end-users.
 
 ---
 
