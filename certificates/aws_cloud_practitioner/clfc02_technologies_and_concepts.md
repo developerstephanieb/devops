@@ -134,18 +134,15 @@ The **AWS Cloud Adoption Framework (AWS CAF)** provides a comprehensive set of g
 
 ### Amazon EC2 Instance Types
 
-**Amazon EC2 Purchasing Options** allow for the optimization of costs based on workload requirements. Selecting the correct pricing model is critical for balancing cost savings with availability and flexibility.
+**Amazon EC2 Instance Types** determine the hardware configuration of the host computer used for the instance. Each type offers different compute, memory, and storage capabilities, which are grouped into families (such as **General Purpose**, **Compute Optimized**, and **Memory Optimized**) to fit different use cases. **EC2 Purchasing Options** (also known as Pricing Models) allow for the optimization of costs based on the consistency and flexibility of the workload.
 
 - **On-Demand Instances**: The default pay-as-you-go model. Payment is made for compute capacity by the second or hour with no long-term commitment or upfront payments. This is ideal for short-term, irregular workloads or applications being developed and tested for the first time.
-
 - **Savings Plans**: A flexible pricing model that offers low prices (up to 72% savings) in exchange for a commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3-year term. This model applies to usage across Amazon EC2, AWS Lambda, and AWS Fargate.
-
-- **Reserved Instances (RI)**: Provides a significant discount (up to 72%) compared to On-Demand pricing in exchange for a 1 or 3-year term commitment. **Standard RIs** offer the highest discount but are less flexible; the instance type and operating system are fixed. **Convertible RIs** offer a lower discount than Standard RIs but allow the exchange of the instance for another with different attributes (e.g., different instance family) during the term.
-
+- **Reserved Instances (RI)**: Provides a significant discount (up to 72%) compared to On-Demand pricing in exchange for a 1 or 3-year term commitment. 
+  - **Standard RIs** offer the highest discount but are less flexible; the instance type and operating system are fixed. 
+  - **Convertible RIs** offer a lower discount than Standard RIs but allow the exchange of the instance for another with different attributes (e.g., different instance family) during the term.
 - **Spot Instances**: Allow the use of spare Amazon EC2 computing capacity for up to 90% off the On-Demand price. However, AWS can reclaim the instance with only a 2-minute warning if the capacity is needed elsewhere. This is suitable for fault-tolerant, stateless workloads like batch processing or data analysis.
-
 - **Dedicated Hosts**: A physical server fully dedicated to a single customer's use. This option is typically required to meet strict regulatory compliance or to use existing server-bound software licenses (BYOL - Bring Your Own License) that are billed per socket or per core.
-
 - **Dedicated Instances**: Instances that run in a Virtual Private Cloud (VPC) on hardware that's dedicated to a single customer. Unlike Dedicated Hosts, these do not offer visibility into the underlying sockets or physical cores of the host hardware.
 
 ---
