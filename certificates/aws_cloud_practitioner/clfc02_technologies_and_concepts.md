@@ -152,66 +152,82 @@ The **AWS Cloud Adoption Framework (AWS CAF)** provides a comprehensive set of g
 **AWS Global Infrastructure** refers to the physical hardware and network arrangement that spans the globe. It is designed and built to deliver a flexible, reliable, scalable, and secure cloud computing environment with high quality global network performance.
 
 - **Regions**: A Region is a physical location in the world where AWS clusters data centers. Each Region is entirely independent and isolated from other Regions to ensure fault tolerance and stability.
-
 - **Availability Zones (AZs)**: Each Region consists of three or more Availability Zones. An AZ is a discrete location within a Region that is engineered to be isolated from failures in other AZs. They provide inexpensive, low-latency network connectivity to other AZs in the same Region.
-
 - **Data Centers**: The fundamental building block of the infrastructure. A single Availability Zone consists of one or more discrete data centers, each with redundant power, networking, and connectivity, housed in separate facilities.
-
 - **Edge Locations**: Specialized data centers used by **Amazon CloudFront** (CDN) to cache content closer to end-users. These locations are more numerous than Regions and help reduce latency by delivering content from the location geographically nearest to the user.
-
 - **Regional Data Sovereignty**: A critical concept for compliance. Data stored in a specific Region never leaves that Region unless explicitly moved or replicated. This ensures organizations can meet local data residency laws and regulations.
-
 - **Factors for Selecting a Region**: When deploying resources, the choice of Region is determined by four main factors:
-
   1. **Data Governance**: Adherence to local laws regarding where data must reside.
-
   2. **Proximity**: Reducing latency by choosing a Region close to the target user base.
-
   3. **Cost**: Pricing for AWS services varies by Region based on local operational costs (e.g., electricity, taxes).
-
   4. **Service Availability**: Not all AWS services are available in every Region immediately upon launch.
 
 ---
 
 ### Infrastructure as Code (IaC)
 
-**Infrastructure as Code (IaC)** is the practice of provisioning and managing IT infrastructure using configuration files and code rather than through manual configuration in the AWS Management Console. This approach treats infrastructure with the same rigor as application code.
+**Infrastructure as Code (IaC)** is a practice in which infrastructure is provisioned and managed using code and software development techniques, such as version control and continuous integration. It replaces manual configuration in the AWS Management Console with automated, repeatable deployments.
 
-- **AWS CloudFormation**: The primary AWS service for Infrastructure as Code. It allows for the modeling of an entire infrastructure in a text file. CloudFormation reads the file and automatically provisions and configures the resources described within it.
-
+- **AWS CloudFormation**: The primary AWS service for IaC. It allows for the modeling of an entire infrastructure in a text file. CloudFormation reads the file and automatically provisions and configures the resources described within it in a safe, repeatable manner.
 - **Templates**: The "blueprint" files used by CloudFormation, written in either JSON or YAML format. These templates describe the desired resources (e.g., an EC2 instance, an S3 bucket) and their dependencies.
-
 - **Stacks**: When CloudFormation executes a template, it creates a **Stack**. A Stack is a collection of AWS resources that are managed as a single unit. If a stack is deleted, all resources defined within that stack are automatically deleted, ensuring clean removal of infrastructure.
-
-- **Repeatability and Consistency**: IaC eliminates the manual errors and inconsistencies associated with human configuration. The same template can be used to deploy identical environments (e.g., Development, Staging, Production) in multiple Regions with guaranteed consistency.
-
-- **Version Control**: Because infrastructure is defined as code, templates can be stored in version control systems (like Git). This allows for tracking changes over time, peer reviews of infrastructure changes, and the ability to roll back to previous versions if issues arise.
-
+- **Change Sets**: A feature that allows for the previewing of changes to a stack before they are applied. By creating a change set, you can see how proposed changes to a template will impact running resources (e.g., will a database be deleted or just modified?) before executing the update.
+- **Drift Detection**: A feature that detects if a stack's actual configuration differs from its template configuration. This happens if someone manually changes a resource (e.g., changing a security group rule via the Console) outside of CloudFormation.
 - **AWS Cloud Development Kit (AWS CDK)**: An open-source software development framework that allows for the definition of cloud application resources using familiar programming languages (such as Python, Java, or TypeScript) instead of JSON or YAML. The CDK compiles this code into CloudFormation templates.
 
 ---
 
 ### AWS Knowledge Center
 
-**The AWS Knowledge Center** is a searchable database of support articles and videos covering the most frequent questions and requests received by AWS Support.
+The **AWS Knowledge Center** serves as the official repository for the most frequent questions and requests processed by AWS Support. It functions as a primary self-service resource, allowing for the resolution of technical issues without the need for direct human intervention.
 
-- **Authoritative Source**: Content is created and updated by the same AWS Support engineers and architects who handle customer cases daily, ensuring the solutions are practical, technically accurate, and up-to-date.
-
+- **Authoritative Source**: Content is created and updated by the same AWS Support engineers and architects.
 - **Problem Solving**: It serves as a primary resource for troubleshooting without needing to contact support. It contains specific solutions to common technical issues, detailed explanations of error messages, and "how-to" guides for configuring services.
-
 - **Public Accessibility**: The Knowledge Center is publicly available on the internet. Access does not require an AWS account or a paid support plan.
-
 - **Integration with Case Creation**: When a user attempts to create a support case within the AWS Management Console, the system automatically suggests relevant Knowledge Center articles based on the service and issue selected. This often allows for issue resolution before a case is formally submitted.
 
 ---
 
 ### Machine Learning
 
+**Machine Learning (ML)** on AWS is organized into a three-layer stack designed to accommodate different levels of technical expertise, ranging from developers with no prior ML experience to expert data scientists.
+
+- **The AWS Machine Learning Stack**: The conceptual framework used to categorize AWS ML offerings. It consists of three distinct layers: AI Services, ML Services, and ML Frameworks & Infrastructure.
+- **AI Services (Top Layer)**: These are pre-trained models accessible via API. They allow developers to add intelligence (such as image recognition, speech-to-text, or chatbots) to applications without needing to build or train models themselves. Examples include Amazon Rekognition and Amazon Polly.
+- **ML Services (Middle Layer)**: This layer is centered on Amazon SageMaker. It provides a managed platform for developers and data scientists who want to build, train, and deploy their own custom models but want to avoid the heavy lifting of managing the underlying infrastructure.
+- **ML Frameworks and Infrastructure (Bottom Layer)**: This layer is for expert practitioners who require full control over the environment. It includes the actual compute resources (such as Amazon EC2 instances with powerful GPUs) and support for open-source frameworks like TensorFlow, PyTorch, and Apache MXNet.
+- **Training vs. Inference**: The two distinct phases of machine learning.
+  - **Training**: The process of feeding data into an algorithm to create a model. This is computationally intensive.
+  - **Inference**: The process of using the trained model to make predictions on new, live data.
+
 ### Management and Governance
 
-### Migration and data transfer
+**Management and Governance** on AWS refers to the mechanisms used to maintain control over a cloud environment while preserving the agility of product teams. It involves balancing the need for speed with the need for security, compliance, and cost efficiency.
 
-- AWS DataSync: An online data transfer service that automates moving data between on-premises storage and AWS storage services (like S3 or EFS). It uses a proprietary protocol to transfer data up to 10 times faster than open-source tools.
+- **Observability**: The ability to understand the internal state of a system based on its external outputs (logs, metrics, and traces). In the cloud, this concept is critical for monitoring application health and responding to performance changes in real-time.
+- **Auditing**: The practice of recording and analyzing user activity and API usage. Because every action in AWS is an API call, the platform allows for a comprehensive, immutable audit trail of "who did what, where, and when," which is essential for security and compliance.
+- **Governance at Scale**: As organizations grow, they often use multiple AWS accounts to isolate workloads (e.g., separate accounts for Development, Staging, and Production). Governance involves applying policies and guardrails centrally to ensure all accounts adhere to the organization's security and financial standards.
+- **Configuration Management**: The process of tracking and controlling changes to infrastructure configuration. It enables the detection of "configuration drift," where resources deviate from their desired or compliant state (e.g., a storage bucket that was accidentally made public).
+- **Resource Organization (Tagging)**: The strategy of assigning metadata (key-value pairs) to resources. Tags are the fundamental mechanism for organizing resources, managing costs, and controlling access in a granular way across a complex environment.
+- **Automated Remediation**: The concept of using software to automatically fix issues without human intervention. For example, if a configuration rule detects a non-compliant resource, an automated workflow can trigger to correct the configuration immediately.
+
+### Migration and Data Transfer
+
+**Migration and Data Transfer** involves the strategies, methodologies, and logistics of moving IT assets—including applications, databases, and other data—from an on-premises environment or another cloud to AWS.
+
+- **The 6 Rs of Migration**: A common framework used to categorize the different strategies for migrating applications to the cloud.
+  - **Rehost ("Lift and Shift")**: Moving applications to the cloud without making any changes to the underlying code. This is the fastest method (e.g., moving a VM from a local data center to Amazon EC2).
+  - **Replatform ("Lift, Tinker, and Shift")**: Making a few cloud optimizations to the application during migration without changing the core architecture (e.g., moving a self-managed database to Amazon RDS).
+  - **Refactor ("Re-architect")**: Re-imagining how an application is architected and developed, typically using cloud-native features (e.g., breaking a monolith into microservices using AWS Lambda).
+  - **Repurchase ("Drop and Shop")**: Moving from a legacy application to a commercial Software-as-a-Service (SaaS) platform (e.g., moving from a local CRM to Salesforce).
+  - **Retain**: Keeping applications on-premises for now (often due to compliance or latency requirements).
+  - **Retire**: Removing applications that are no longer needed.
+- **Online vs. Offline Data Transfer**: The choice of transfer method depends on the volume of data and available network bandwidth.
+  - **Online Transfer**: Uses the internet or a dedicated network connection (like AWS Direct Connect or AWS DataSync). This is suitable for continuous replication or smaller datasets.
+  - **Offline Transfer**: Uses physical storage devices (AWS Snow Family) to physically ship data to AWS. This is required when transferring massive datasets (petabytes or exabytes) over the network would take an unacceptably long time (typically longer than one week).
+- **Homogeneous vs. Heterogeneous Database Migration**:
+  - **Homogeneous**: The source and target database engines are the same (e.g., Oracle to Oracle). The schema structure remains compatible, making migration straightforward.
+  - **Heterogeneous**: The source and target databases are different (e.g., Oracle to Amazon Aurora). This requires a Schema Conversion step to translate the code and structure of the source database to match the target.
 
 ### Network services
 ### AWS Partner Network
