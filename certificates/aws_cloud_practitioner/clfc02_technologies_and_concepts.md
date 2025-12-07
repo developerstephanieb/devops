@@ -6,29 +6,29 @@
 [Benefits of Migrating to the AWS Cloud](#benefits-of-migrating-to-the-aws-cloud)  
 [AWS Cloud Adoption Framework (AWS CAF)](#aws-cloud-adoption-framework-aws-caf)  
 [AWS Compliance](#aws-compliance)   
-[Compute](#compute)   !!!   
+[Compute](#compute)      
 [Cost Management](#cost-management)   
-[Databases](#databases)   !!!   
+[Databases](#databases)      
 [Amazon EC2 Instance Types](#amazon-ec2-instance-types)    
 [AWS Global Infrastructure](#aws-global-infrastructure)   
 [Infrastructure as Code (IaC)](#infrastructure-as-code-iac)    
 [AWS Knowledge Center](#aws-knowledge-center)   
-[Machine Learning](#machine-learning)    !!!   
-[Management and Governance](#management-and-governance)   !!!   
-[Migration and data transfer](#migration-and-data-transfer)   !!!   
-[Network services](#network-services)   !!!   
+[Machine Learning](#machine-learning)       
+[Management and Governance](#management-and-governance)      
+[Migration and data transfer](#migration-and-data-transfer)      
+[Network services](#network-services)      
 [AWS Partner Network](#aws-partner-network)   
 [AWS Prescriptive Guidance](#aws-prescriptive-guidance)   
 [AWS Pricing Calculator](#aws-pricing-calculator)   
 [AWS Professional Services](#aws-professional-services)   
 [AWS re:Post](#aws-repost)   
 [AWS SDKs](#aws-sdks)   
-[Security](#security)   !!!   
+[Security](#security)      
 [AWS Security Blog](#aws-security-blog)   
 [AWS Security Center](#aws-security-center)   
 [AWS shared responsibility model](#aws-shared-responsibility-model)   
 [AWS Solutions Architects](#aws-solutions-architects)   
-[Storage](#storage)    !!!      
+[Storage](#storage)          
 [AWS Support Center](#aws-support-center)   
 [AWS Support plans](#aws-support-plans)   
 [AWS Well-Architected Framework](#aws-well-architected-framework)   
@@ -200,6 +200,8 @@ The **AWS Knowledge Center** serves as the official repository for the most freq
   - **Training**: The process of feeding data into an algorithm to create a model. This is computationally intensive.
   - **Inference**: The process of using the trained model to make predictions on new, live data.
 
+---
+
 ### Management and Governance
 
 **Management and Governance** on AWS refers to the mechanisms used to maintain control over a cloud environment while preserving the agility of product teams. It involves balancing the need for speed with the need for security, compliance, and cost efficiency.
@@ -210,6 +212,8 @@ The **AWS Knowledge Center** serves as the official repository for the most freq
 - **Configuration Management**: The process of tracking and controlling changes to infrastructure configuration. It enables the detection of "configuration drift," where resources deviate from their desired or compliant state (e.g., a storage bucket that was accidentally made public).
 - **Resource Organization (Tagging)**: The strategy of assigning metadata (key-value pairs) to resources. Tags are the fundamental mechanism for organizing resources, managing costs, and controlling access in a granular way across a complex environment.
 - **Automated Remediation**: The concept of using software to automatically fix issues without human intervention. For example, if a configuration rule detects a non-compliant resource, an automated workflow can trigger to correct the configuration immediately.
+
+---
 
 ### Migration and Data Transfer
 
@@ -229,22 +233,103 @@ The **AWS Knowledge Center** serves as the official repository for the most freq
   - **Homogeneous**: The source and target database engines are the same (e.g., Oracle to Oracle). The schema structure remains compatible, making migration straightforward.
   - **Heterogeneous**: The source and target databases are different (e.g., Oracle to Amazon Aurora). This requires a Schema Conversion step to translate the code and structure of the source database to match the target.
 
-### Network services
-### AWS Partner Network
-### AWS Prescriptive Guidance
-### AWS Pricing Calculator
-### AWS Professional Services
-### AWS re:Post
-### AWS SDKs
-### Security
-### AWS Security Blog
-### AWS Security Center
-### AWS shared responsibility model
-### AWS Solutions Architects
-### Storage
-### AWS Support Center
-### AWS Support plans
-### AWS Well-Architected Framework
+---
+
+### Network Services
+
+**Network Services** in the cloud provide the foundational plumbing that allows resources to communicate with each other, the internet, and on-premises networks. They abstract physical cabling and switches into software-defined networking (SDN).
+
+- **Network Isolation**: The concept of provisioning a logically isolated section of the cloud (Amazon VPC). This allows for the definition of a virtual network topology that closely resembles a traditional physical network, including IP address ranges, subnets, and route tables.
+- **Subnetting**: The practice of dividing a network into smaller, distinct segments. In AWS, this is used to segregate resources based on their need for internet access:
+  - **Public Subnets**: Contain resources that must communicate directly with the internet (e.g., web servers).
+  - **Private Subnets**: Contain resources that should not be directly accessible from the internet (e.g., databases).
+- **Routing and Gateways**: Traffic flow is controlled by **Route Tables**, which act as a navigation map for network packets. Connectivity to external networks is achieved via specific gateways:
+  - **Internet Gateway (IGW)**: Enables access to the public internet.
+  - **NAT Gateway**: Allows private resources to access the internet (e.g., for software updates) without being exposed to inbound connections.
+  - **Virtual Private Gateway (VGW)**: Enables VPN connections to on-premises networks.
+- **Stateful vs. Stateless Firewalls**: Security is enforced at two distinct levels:
+  - **Security Groups (Instance Level)**: These are stateful, meaning that if an inbound request is allowed, the response is automatically allowed, regardless of outbound rules.
+  - **Network Access Control Lists (Subnet Level)**: These are stateless, meaning that inbound and outbound traffic rules must be explicitly defined separately.
+- **Content Delivery Network (CDN)**: A system of distributed servers (Edge Locations) that delivers content to users based on their geographic location. This concept relies on Caching, where copies of content are stored closer to the user to minimize latency (the time it takes for data to travel).
+- **Hybrid Connectivity**: The strategy of connecting on-premises infrastructure to the cloud. This ranges from encrypted tunnels over the public internet (**VPN**) to dedicated, private fiber-optic connections that bypass the internet entirely (**Direct Connect**).
 
 ---
+
+### AWS Partner Network
+
+The **AWS Partner Network (APN)** is a global community of partners that leverage AWS programs, expertise, and resources to build, market, and sell customer offerings. It acts as the primary bridge between third-party vendors and AWS customers.
+
+- **Two Primary Types of Partners**: While AWS now categorizes partners into five "Paths" (Software, Hardware, Services, Training, Distribution), the Cloud Practitioner exam primarily focuses on the distinction between:
+  - **Consulting Partners (Services Path)**: Professional services firms that help customers design, architect, build, migrate, and manage their workloads and applications on AWS. Examples include System Integrators (SIs), Strategic Consultancies, and Managed Service Providers (MSPs).
+  - **Technology Partners (Software/Hardware Path)**: Companies that provide software solutions that are either hosted on, or integrated with, the AWS Cloud. Examples include Independent Software Vendors (ISVs), SaaS providers, and hardware manufacturers.
+- **APN Tiers**: Partners are categorized into tiers based on their level of experience, technical expertise, and customer success. The tiers for Services Partners, from lowest to highest, are:
+  - **Select**: The entry level for partners with trained staff and some customer experience.
+  - **Advanced**: Partners with a strong team of trained technical individuals and a proven track record of customer experience.
+  - **Premier**: The most experienced partners, recognized as leaders in their respective markets with deep technical expertise and success working with a large number of customers at scale.
+- **AWS Competency Program**: A program that validates and promotes partners who have demonstrated technical proficiency and proven customer success in specialized solution areas (e.g., DevOps, Security, Data & Analytics) or vertical markets (e.g., Healthcare, Financial Services). It helps customers find the most qualified partner for their specific needs.
+- **AWS Managed Service Provider (MSP) Program**: A validation for APN Consulting Partners who are skilled at cloud infrastructure and application migration, and deliver value to customers by offering proactive monitoring, automation, and management of their customer's environment.
+
+---
+
+### AWS Prescriptive Guidance
+
+**AWS Prescriptive Guidance** provides time-tested strategies, guides, and patterns from AWS experts and partners to help accelerate cloud migration, modernization, and optimization. It translates AWS institutional knowledge into actionable resources.
+- **Source of Expertise**: The content is authored by AWS solutions architects, professional services consultants, and AWS Partners who have experience helping large enterprises transform their businesses.
+- **Three Core Components**:
+  - **Strategies**: High-level frameworks and methodologies for business leaders (CxOs) and senior managers. These cover complex topics like "The 6 Rs of Migration" or organizational change management.
+  - **Guides**: Detailed planning and implementation references for architects and technical leads. They offer best practices for specific domains, such as security, compliance, or operations.
+  - **Patterns**: Technical, step-by-step instructions for builders and engineers. A "pattern" typically includes the architecture, tools, and code snippets required to solve a specific migration or modernization task (e.g., "Migrate an Oracle database to Amazon Aurora PostgreSQL").
+- **Focus on Business Outcomes**: Unlike standard documentation (which explains how a service works), Prescriptive Guidance explains why and when to use specific strategies to achieve business goals like cost reduction, agility, or innovation.
+
+---
+
+### AWS Pricing Calculator
+
+---
+
+### AWS Professional Services
+
+---
+
+### AWS re:Post
+
+---
+
+### AWS SDKs
+
+---
+
+### Security
+
+---
+
+### AWS Security Blog
+
+---
+
+### AWS Security Center
+
+---
+
+### AWS Shared Responsibility Model
+
+---
+
+### AWS Solutions Architects
+
+---
+
+### Storage
+
+---
+
+### AWS Support Center
+
+---
+
+### AWS Support Plans
+
+---
+
+### AWS Well-Architected Framework
 
