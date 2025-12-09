@@ -285,6 +285,14 @@ The **AWS Partner Network (APN)** is a global community of partners that leverag
 
 ### AWS Pricing Calculator
 
+The **AWS Pricing Calculator** is a web-based planning tool used to create cost estimates for AWS use cases. It allows for the modeling of solutions before building them, enabling the exploration of price points and functional requirements.
+
+- **Estimation Prior to Provisioning**: The primary function is to estimate the monthly cost of AWS services before any resources are launched. This is essential for budgeting and seeking financial approval for new projects.
+- **Granular Configuration**: Users can select specific AWS Regions, instance types, storage classes, and data transfer amounts to generate highly accurate estimates based on anticipated usage.
+- **Hierarchical Organization**: Estimates can be organized into groups (e.g., "Web Server Stack" or "Database Layer") to align with architecture diagrams. This helps calculate the total cost of ownership (TCO) for specific applications or environments.
+- **Comparison of Purchasing Models**: The tool allows for the comparison of different pricing models within the estimate, such as visualizing the cost difference between running an EC2 instance On-Demand versus purchasing a Savings Plan or Reserved Instance.
+- **Shareable Estimates**: Once an estimate is complete, the tool generates a unique URL, CSV, or PDF export. This facilitates the sharing of cost projections with stakeholders, finance teams, or clients for review.
+
 ---
 
 ### AWS Professional Services
