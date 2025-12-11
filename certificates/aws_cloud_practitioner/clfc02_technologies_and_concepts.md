@@ -369,6 +369,14 @@ The **AWS Security Blog** serves as the official publication channel for securit
 
 ### AWS Security Center
 
+The **AWS Security Center** (often referred to as the AWS Security Resource Center) is the central web repository for all official security-related information, documentation, and guidance. It serves as the starting point for learning how to secure your cloud environment.
+
+- **Central Knowledge Hub**: It aggregates whitepapers, certifications, security bulletins, and compliance reports into a single location, making it easier for customers to find the information they need to prove compliance or improve their security posture.
+- **Security Bulletins**: A dedicated section that publishes official announcements regarding potential security and privacy events. If a new vulnerability (like a widespread software bug) is discovered, AWS posts remediation details here.
+- **Compliance Resources**: It provides access to information about AWS compliance programs (such as SOC, PCI, and HIPAA) and links to **AWS Artifact** for downloading the actual audit reports.
+- **Partner Solutions**: It features a directory of AWS Security Competency Partners—third-party software and service providers vetted by AWS for their security expertise.
+- **Audience**: Unlike technical consoles (like the EC2 dashboard) intended for engineers, the Security Center is designed for a broad audience, including CISOs, compliance officers, auditors, and students.
+
 ---
 
 ### AWS Shared Responsibility Model
