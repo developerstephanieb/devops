@@ -381,6 +381,21 @@ The **AWS Security Center** (often referred to as the AWS Security Resource Cent
 
 ### AWS Shared Responsibility Model
 
+The **AWS Shared Responsibility Model** defines the distribution of security obligations between AWS and the customer. It ensures accountability and clarity regarding who is responsible for protecting the various components of the cloud environment.
+
+- **Security OF the Cloud (AWS Responsibility)**: AWS is responsible for protecting the infrastructure that runs all of the services offered in the AWS Cloud. This includes:
+  - **Physical Security**: Access control to data centers, smoke detection, and fire suppression.
+  - **Hardware**: Management of servers, storage devices, and networking equipment.
+  - **Software Infrastructure**: Maintenance of the host operating systems, virtualization layer, and the actual software of the AWS services.
+  - **Network Infrastructure**: Protection of the global network backbone.
+- **Security IN the Cloud (Customer Responsibility)**: The customer is responsible for the security of everything they put into the cloud. The scope of this responsibility depends on the services used, but generally includes:
+  - **Customer Data**: Encrypting data at rest and in transit.
+  - **Platform, Applications, Identity & Access Management**: Configuring operating systems (on EC2), managing application software, and setting up user accounts and permissions (IAM).
+  - **Network & Firewall Configuration**: Setting up Security Groups, Network ACLs, and routing rules.
+- **Variability by Service**: The line of responsibility shifts depending on the service model.
+  - **Infrastructure (e.g., EC2)**: The customer has more responsibility (managing the OS, patching).
+  - **Managed Services (e.g., RDS, Lambda)**: AWS takes on more responsibility (managing the OS, patching, and platform updates), leaving the customer to focus primarily on data and access control.
+
 ---
 
 ### AWS Solutions Architects
