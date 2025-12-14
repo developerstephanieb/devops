@@ -400,19 +400,87 @@ The **AWS Shared Responsibility Model** defines the distribution of security obl
 
 ### AWS Solutions Architects
 
+**AWS Solutions Architects (SAs)** are technical experts who partner with customers to design secure, scalable, and reliable cloud architectures. They act as trusted advisors, helping organizations understand how to best utilize AWS services to achieve their specific business goals.
+
+- **Guidance vs. Implementation**: Unlike **AWS Professional Services** (who are hired to perform hands-on implementation and coding), Solutions Architects primarily provide strategic guidance. They review architectural designs, recommend best practices, and help customers plan migrations, empowering the customer's internal teams to build the solution themselves.
+- **Well-Architected Alignment**: SAs frequently conduct **Well-Architected Reviews** with customers. They evaluate existing workloads against the five pillars of the AWS Well-Architected Framework (Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization) to identify high-risk issues.
+- **Technical Liaison**: They serve as a bridge between the customer and the AWS service teams. SAs often convey customer feedback and feature requests directly to the engineering teams, helping to shape the future roadmap of AWS products.
+- **Certification**: The role is closely tied to the **AWS Certified Solutions Architect** credentials (Associate and Professional), which validate the technical expertise required to design distributed systems on AWS.
+- **Engagement**: While SAs are often aligned with specific customer accounts (especially in the Enterprise support tier), they also create public-facing content, such as reference architectures, whitepapers, and blog posts, to assist the broader community.
+
 ---
 
 ### Storage
+
+**Storage** in the cloud is categorized into three fundamental architectural types, each designed to solve specific technical problems based on how data is accessed and managed.
+
+- **Object Storage**: Data is stored as discrete units (objects) in a flat address space rather than a hierarchy. Each object includes the data itself, metadata, and a unique identifier.
+  - Characteristics: massive scalability (virtually unlimited), accessible via API (HTTP/HTTPS) over the internet, and generally cheaper for large amounts of unstructured data.
+  - Use Case: Storing photos, videos, backups, and static website files (e.g., **Amazon S3**).
+- **Block Storage**: Data is split into fixed-size chunks (blocks) and stored on a volume. It behaves like a physical hard drive connected to a server.
+  - Characteristics: Low latency, high performance, and the ability to be formatted with a file system (like NTFS or ext4). It is required for booting an operating system.
+  - Use Case: Databases, enterprise applications, and the boot drive for virtual servers (e.g., Amazon EBS).
+- **File Storage**: Data is stored as files in a hierarchical folder structure, adhering to standard protocols like Network File System (NFS) or Server Message Block (SMB).
+  - Characteristics: Shared access; multiple servers can access the same files simultaneously.
+  - Use Case: Shared content repositories, home directories, and lift-and-shift of legacy applications (e.g., **Amazon EFS**).
+- **Durability vs. Availability**: Two critical metrics for measuring storage reliability.
+  - **Durability**: The probability that data will not be lost or corrupted. (e.g., Amazon S3 is designed for 99.999999999% or "11 9s" of durability).
+  - **Availability**: The percentage of time that data is accessible for use when requested.
+- **Lifecycle Management**: The strategy of automatically moving data between different storage "tiers" to optimize costs. As data ages and is accessed less frequently, it is moved from expensive, high-performance storage (Hot) to cheaper, slower archival storage (Cold).
 
 ---
 
 ### AWS Support Center
 
+The **AWS Support Center** is the primary hub within the AWS Management Console for managing the support relationship. It provides a personalized, authenticated view of support cases, plan details, and account health, distinct from the public-facing AWS Knowledge Center.
+
+- **Case Management**: The core function of the Support Center is the creation and management of technical support cases. Users can open new cases, track the status of existing ones, upload diagnostic files, and communicate directly with AWS Support Engineers.
+- **Trusted Advisor Integration**: It serves as the dashboard for **AWS Trusted Advisor**, displaying high-level checks and recommendations for cost optimization, security, and performance.
+- **Personal Health Dashboard**: It integrates with the **AWS Personal Health Dashboard** to provide alerts and remediation guidance for AWS events that may affect the user's specific environment (e.g., a scheduled maintenance event for a specific EC2 instance).
+- **Plan Management**: It allows for the viewing of the current support plan status and provides the interface to modify or upgrade the plan (e.g., moving from Basic to Business).
+
 ---
 
 ### AWS Support Plans
+
+**AWS Support Plans** are tiered subscription models that provide different levels of technical assistance, response times, and access to expertise. They are designed to align with the operational needs of the workload, from experimental testing to mission-critical enterprise systems.
+
+- **Basic Support**: The default plan included for all AWS customers at no additional cost.
+  - Access: 24/7 access to Customer Service (for billing and account issues) and the AWS Knowledge Center.
+  - Technical Support: No access to Cloud Support Engineers.
+  - Trusted Advisor: Access to only the 7 core checks.
+- **Developer Support**: Designed for early-stage development and testing environments.
+  - Access: Business hours access via email to Cloud Support Associates.
+  - Response Time (SLA): General guidance in < 24 hours; System impaired in < 12 hours.
+  - Best For: Non-production workloads where downtime is acceptable.
+- **Business Support**: The minimum recommended plan for production workloads.
+  - Access: 24/7 access via phone, web chat, and email to Cloud Support Engineers.
+  - Response Time (SLA): Production system down in < 1 hour.
+  - Trusted Advisor: Access to the full set of checks.
+  - Best For: Production workloads where 24/7 support is required.
+- **Enterprise On-Ramp Support**: A middle-ground tier for customers starting their cloud journey who need expert guidance.
+  - Access: 24/7 access to Senior Cloud Support Engineers and a pool of Technical Account Managers (TAMs).
+  - Response Time (SLA): Business-critical system down in < 30 minutes.
+- **Enterprise Support**: The highest tier, designed for mission-critical systems.
+  - Access: 24/7 access to Senior Cloud Support Engineers and a designated Technical Account Manager (TAM) who provides proactive advocacy and architectural reviews.
+  - Response Time (SLA): Business-critical system down in < 15 minutes.
+  - Best For: Large-scale, mission-critical operations requiring consultative partnership.
 
 ---
 
 ### AWS Well-Architected Framework
 
+The **AWS Well-Architected Framework** provides a consistent approach for customers and partners to evaluate architectures and implement designs that will scale over time. It helps architects build secure, high-performing, resilient, and efficient infrastructure for their applications.
+
+- **The Six Pillars**: The framework is built around six distinct pillars, each containing specific design principles and best practices:
+  - **Operational Excellence**: Focuses on running and monitoring systems to deliver business value, and continually improving processes and procedures. Key topics include automating changes, responding to events, and defining standards to manage daily operations.
+  - **Security**: Focuses on protecting information and systems. Key topics include confidentiality and integrity of data, managing user permissions, and establishing controls to detect security events.
+  - **Reliability**: Focuses on the ability of a workload to perform its intended function correctly and consistently when expected. Key topics include distributed system design, recovery planning, and how to handle changes.
+  - **Performance Efficiency**: Focuses on using IT and computing resources efficiently to meet system requirements and to maintain that efficiency as demand changes and technologies evolve.
+  - **Cost Optimization**: Focuses on the ability to run systems to deliver business value at the lowest price point. Key topics include understanding and controlling where money is being spent, selecting the most appropriate and right-sized resource types, and analyzing spending over time.
+  - **Sustainability**: Focuses on minimizing the environmental impacts of running cloud workloads. Key topics include a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources.
+- **General Design Principles**: Beyond the pillars, the framework advocates for general cloud best practices, such as:
+  - **Stop guessing capacity**: Use auto-scaling to meet demand.
+  - **Test systems at production scale**: Create a duplicate of the production environment on demand, complete testing, and then decommission the resources.
+  - **Allow for evolutionary architectures**: Design systems that can change and evolve over time rather than being static.
+  - **Drive architectures using data**: Make decisions based on data/metrics rather than assumptions.
