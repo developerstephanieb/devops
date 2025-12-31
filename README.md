@@ -2,9 +2,8 @@
 
 ## Repository Structure
 
-```plaintext
-devops_reference/
-├── README.md
+```
+ref-devops/
 ├── 01_
 │   ├──                   
 │   ├──                   
@@ -19,8 +18,11 @@ devops_reference/
 ├── 05_ci_cd/
 │   ├── 01_jenkins.md
 │   └── 02_github_actions.md
-├── 06_certificates/
+├── 98_certificates/
 │   ├── aws_cloud_practitioner/                  
-│   └── aws_solutions_architect/                  
-└── .gitignore
+│   └── aws_solutions_architect/      
+├── 99-resources/
+├── .gitignore
+├── Makefile
+└── README.md
 ```

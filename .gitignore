@@ -1,8 +1,68 @@
+# ==============================================================================
+# UNIVERSAL IGNORES
+# ==============================================================================
+
+# --- macOS ---
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# --- Linux ---
+.Desktop
+*~
+
+# --- Windows ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Editor & IDE Configs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.history/
+*.sublime-workspace
+
+# --- Environments ---
 venv/
 env/
 .venv/
-.env/
-.DS_Store
-.vscode/
-.history
-notes/
+.env
+.env.*
+
+# --- Keys & Certs ---
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa
+id_dsa
+
+# --- Data & Logs ---
+input.txt
+output.txt
+error.txt
+data/
+datasets/
+*.log
+*.tmp
+*.bak
+*.dat
+
+# --- Authoring & Workflow ---
+_drafts/
+_scratch/
+_templates/
+_review/
+
+# ==============================================================================
+# PROJECT SPECIFIC
+# ==============================================================================
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
